@@ -1,0 +1,44 @@
+/**
+ * Utility function to add CSS in multiple passes.
+ * @param {string} styleString
+ */
+function addStyle(styleString) {
+    const style = document.createElement('style');
+    style.textContent = styleString;
+    document.head.append(style);
+}
+//overwrite style
+addStyle(`
+	body{
+		filter: blur(8px);
+	}
+	body[loaded]{
+		filter: none!important;
+	}
+`.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, ""));
+   
+function loadScript(url, callback = void 0){
+
+    var script = document.createElement("script")
+    script.type = "text/javascript";
+
+    if (script.readyState){  //IE
+        script.onreadystatechange = function(){
+            if (script.readyState == "loaded" ||
+                    script.readyState == "complete"){
+                script.onreadystatechange = null;
+                callback();
+            }
+        };
+    } else {  //Others
+        script.onload = function(){
+        	document.querySelector("body").setAttribute("loaded", true);
+            callback();
+        };
+    }
+
+    script.src = url;
+    document.getElementsByTagName("head")[0].appendChild(script);
+}
+
+loadScript("https://raw.githack.com/Kaugumme/pr0mod/main/script.js?" + (+new Date()));
