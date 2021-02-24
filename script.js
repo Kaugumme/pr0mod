@@ -8,7 +8,7 @@ function addStyle(styleString) {
     document.head.append(style);
 }
 
-//initial admin
+//initial admin on normal nav
 p.user.admin = 1;
 
 //overwrite style
@@ -20,7 +20,7 @@ addStyle(`
 	}
 
 	//no admin items (log you out)
-	#item-delete, .comment-delete, .comment-edit-link{
+	#item-delete, .comment-delete, .comment-edit-link, #item-edit-tags{
 		display: none!important;
 	}
 
@@ -54,7 +54,7 @@ addStyle(`
 //fuck the old theme
 document.querySelector("body").setAttribute("class", document.querySelector("body").getAttribute("class").replace("theme-", "theme-custom "))
 
-{
+{ //sig logic
     const signature = function(e) {
 
         const el = e.target;
