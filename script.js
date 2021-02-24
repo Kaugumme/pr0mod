@@ -7,6 +7,10 @@ function addStyle(styleString) {
     style.textContent = styleString;
     document.head.append(style);
 }
+
+//initial admin
+p.user.admin=1;
+
 //overwrite style
 addStyle(`
 	//overwrite theme vars
