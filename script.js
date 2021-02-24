@@ -9,7 +9,7 @@ function addStyle(styleString) {
 }
 
 //initial admin
-p.user.admin=1;
+p.user.admin = 1;
 
 //overwrite style
 addStyle(`
@@ -55,37 +55,6 @@ addStyle(`
 document.querySelector("body").setAttribute("class", document.querySelector("body").getAttribute("class").replace("theme-", "theme-custom "))
 
 {
-    function wordWrap(str, maxWidth) {
-        var newLineStr = "\n";
-        done = false;
-        res = '';
-        while (str.length > maxWidth) {
-            found = false;
-            // Inserts new line at first whitespace of the line
-            for (i = maxWidth - 1; i >= 0; i--) {
-                if (testWhite(str.charAt(i))) {
-                    res = res + [str.slice(0, i), newLineStr].join('');
-                    str = str.slice(i + 1);
-                    found = true;
-                    break;
-                }
-            }
-            // Inserts new line at maxWidth position, the word is too long to wrap
-            if (!found) {
-                res += [str.slice(0, maxWidth), newLineStr].join('');
-                str = str.slice(maxWidth);
-            }
-
-        }
-
-        return res + str;
-    }
-
-    function testWhite(x) {
-        var white = new RegExp(/^\s$/);
-        return white.test(x.charAt(0));
-    };
-
     const signature = function(e) {
 
         const el = e.target;
@@ -103,7 +72,6 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
 
             const sig = "ⓚ";
 
-            //const KedValue = box.value.replace(/k/, "ⓚ").replace(/K/, "Ⓚ");
             const isPM = location.href.includes("/inbox/messages");
 
             //sig not there yet
@@ -117,11 +85,12 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
                         //click btn
                         setTimeout(el.click());
                     } else alert("warning: empty");
-                })
+                });
+                //prevent premature submit, the submit is done when the sig is inserted in the next step
                 el.disabled = true;
                 e.preventDefault();
             }
-
+            //ignore
             el.disabled = false;
         }
     }
@@ -132,7 +101,7 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
 
 //see votes
 setInterval(_ => {
-p.user.admin=1;
+    p.user.admin = 1;
 }, 5999);
 
 //fix mobile vid not draggable
