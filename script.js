@@ -9,10 +9,15 @@ function addStyle(styleString) {
 }
 //overwrite style
 addStyle(`
-
+	//overwrite theme vars
 	:root{
 		--theme-main-color: goldenrod!important;
 		--theme-secondary-color: gold!important;
+	}
+
+	//no admin items (log you out)
+	#item-delete, .comment-delete, .comment-edit-link{
+		display: none!important;
 	}
 
 	//black body
