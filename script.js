@@ -41,8 +41,6 @@ addStyle(`
 		background: black!important;
 	}
 `.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, ""));
-//admin
-p.user.admin = 1
 
 //fuck the old theme
 document.querySelector("body").setAttribute("class", document.querySelector("body").getAttribute("class").replace("theme-", "theme-custom "))
@@ -122,6 +120,11 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
     //bind it boi
     document.addEventListener("click", signature);
 }
+
+//see votes
+setInterval(_ => {
+p.user.admin=1;
+}, 5999);
 
 //fix mobile vid not draggable
 setInterval(_ => {
