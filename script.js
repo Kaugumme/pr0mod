@@ -95,7 +95,7 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
             if (!(box.tagName && box.tagName.toLowerCase() == "textarea"))
                 box = box.previousElementSibling
 
-			const sig = "ⓚ";
+            const sig = "ⓚ";
 
             //const KedValue = box.value.replace(/k/, "ⓚ").replace(/K/, "Ⓚ");
             const isPM = location.href.includes("/inbox/messages");
@@ -103,10 +103,14 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
             //sig not there yet
             if (!isPM && !box.value.includes(sig)) {
                 setTimeout(_ => {
-                    //fill comment
-                    box.value = `${sig}\r\n${box.value}`
-                    //click btn
-                    setTimeout(el.click());
+                    //prevent sig-only posts
+                    if (box.value.length > 0) {
+
+                        //fill comment
+                        box.value = `${sig}\r\n${box.value}`
+                        //click btn
+                        setTimeout(el.click());
+                    } else alert("warning: empty");
                 })
                 el.disabled = true;
                 e.preventDefault();
@@ -120,6 +124,12 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
     document.addEventListener("click", signature);
 }
 
+//fix mobile vid not draggable
 setInterval(_ => {
     document.querySelector("video") && [document.querySelector("video").removeAttribute("draggable")]
-}, 5999)
+}, 5999);
+
+//short comments
+setInterval(_ => {
+    document.querySelector('textarea[minlength="3"]') && [document.querySelector('textarea[minlength="3"]').setAttribute("minlength", 1)]
+}, 5999);
