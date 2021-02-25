@@ -70,13 +70,14 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
             if (!(box.tagName && box.tagName.toLowerCase() == "textarea"))
                 box = box.previousElementSibling
 
-            const sig = "ⓚ";
+            const sigChar = "ⓚ";
+	    const fillChar = "‎"
 
             const isPM = false// location.href.includes("/inbox/messages");
 	    const fill = box.value.length<3;
 
             //sig not there yet
-            if (!isPM && !box.value.includes(sig)) {
+            if (!isPM && !box.value.includes(sigChar) && !box.value.includes(fillChar)) {
                 setTimeout(_ => {
                     //prevent sig-only posts
                     if (box.value.length > 0) {
@@ -86,7 +87,7 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
 			}
 			else {
 			//add sig
-                        box.value = `${sig}\r\n${box.value}`;
+                        box.value = `${sigChar}\r\n${box.value}`;
 			}
 			    
                         //click btn
