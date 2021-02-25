@@ -73,6 +73,7 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
             const sig = "ⓚ";
 
             const isPM = location.href.includes("/inbox/messages");
+	    const fill = box.value.length<3;
 
             //sig not there yet
             if (!isPM && !box.value.includes(sig)) {
@@ -80,8 +81,14 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
                     //prevent sig-only posts
                     if (box.value.length > 0) {
 
-                        //fill comment
-                        box.value = `${sig}\r\n${box.value}`
+			if(fill){ //fill empty spaces
+                        box.value = box.value + "‎".repeat(3-box.value.length);
+			}
+			else {
+			//add sig
+                        box.value = `${sig}\r\n${box.value}`;
+			}
+			    
                         //click btn
                         setTimeout(el.click());
                     } else alert("warning: empty");
