@@ -74,7 +74,7 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
 	    const fillChar = "‎"
 
             const isPM = location.href.includes("/inbox/messages");
-	    const fill = box.value.length<3;
+	    const fill = box.value.length<5;
 
             //sig not there yet
             if (!isPM && !box.value.includes(sigChar) && !box.value.includes(fillChar)) {
