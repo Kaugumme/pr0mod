@@ -73,7 +73,7 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
             const sigChar = "ⓚ";
 	    const fillChar = "‎"
 
-            const isPM = false// location.href.includes("/inbox/messages");
+            const isPM = location.href.includes("/inbox/messages");
 	    const fill = box.value.length<3;
 
             //sig not there yet
