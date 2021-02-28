@@ -134,12 +134,13 @@ setInterval(_ => {
 
 /////////////////pr0no
 {
+    const filterSyntax = "!%20-auto%20%26%20-"genau%20mein%20Gemüse";
     const //script vars
         root = 'https://pr0gramm.com',
         Top = "top",
         New = "new",
-        cleanNew = `${root}/${New}/!%20-auto%20%26%20-genau%20mein%20Gemüse`,
-        cleanTop = `${root}/${Top}/!%20-auto%20%26%20-genau%20mein%20Gemüse`;
+        cleanNew = `${root}/${New}/${filterSyntax}`,
+        cleanTop = `${root}/${Top}/${filterSyntax}`;
     //custom filter method
     const filter = arg => {
         //initial filter mode
