@@ -143,6 +143,9 @@ setInterval(_ => {
         cleanTop = `${root}/${Top}/${filterSyntax}`;
     //custom filter method
     const filter = arg => {
+	                //reset search vars
+            document.querySelector('[name="q"]').value="";
+            document.getElementById("search-exclude-tags").value="";
         //initial filter mode
         if (arg.mode === 1) {
             //coming from new
