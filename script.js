@@ -143,7 +143,9 @@ setInterval(_ => {
         cleanTop = `${root}/${Top}/${filterSyntax}`;
     //custom filter method
     const filter = arg => {
-	 document.title = "pr0>" + document.location.pathname.startsWith("/new") ? "Neu" : "Beliebt"
+	  if(document.location.pathname.startsWith("/new") ||  document.location.pathname.startsWith("/top") ){
+              document.title = "pr0>" + (document.location.pathname.startsWith("/new") ? "Neu" : "Beliebt")
+          }
 	 //reset search vars
             document.querySelector('[name="q"]').value="";
             document.getElementById("search-exclude-tags").value="";
