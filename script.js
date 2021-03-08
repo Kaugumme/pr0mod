@@ -134,7 +134,7 @@ setInterval(_ => {
 
 /////////////////pr0no
 {
-    const filterSyntax = '!%20-auto%20%26%20-"genau%20mein%20Gemüse"%20-kaviar%20-scat';
+    const filterSyntax = '!%20-auto%20%26%20-"mein%20Gemüse"-"genau%20mein%20Gemüse"%20-kaviar%20-scat';
     const //script vars
         root = 'https://pr0gramm.com',
         Top = "top",
