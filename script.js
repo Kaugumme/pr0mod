@@ -9,7 +9,7 @@ function addStyle(styleString) {
 }
 
 //initial admin on normal nav
-p.user.admin = 1;
+p.user.admin = true;
 
 //overwrite style
 addStyle(`
@@ -109,7 +109,7 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
 
 //see votes
 setInterval(_ => {
-    p.user.admin = 1;
+    p.user.admin = true;
 }, 5999);
 
 //fix mobile vid not draggable
