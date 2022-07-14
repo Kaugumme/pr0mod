@@ -70,7 +70,7 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
             if (!(box.tagName && box.tagName.toLowerCase() == "textarea"))
                 box = box.previousElementSibling
 
-            const sigChar = "💛";
+            const sigChar = "❪💛❫";
 	    const fillChar = "‎"
 
             const isPM = location.href.includes("/inbox/messages");
