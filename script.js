@@ -111,12 +111,12 @@ document.querySelector("body").setAttribute("class", document.querySelector("bod
 setInterval(_ => {
     p.user.admin = true;
 
-   if(document.querySelector("#qc-cmp2-container"))
-	   document.querySelector("#qc-cmp2-container").remove()
+
 
 }, 5999);
 
-
+   if(document.querySelector("#qc-cmp2-container"))
+	   document.querySelector("#qc-cmp2-container").remove()
 
 //fix mobile vid not draggable
 setInterval(_ => {
