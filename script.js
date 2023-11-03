@@ -24,6 +24,11 @@ addStyle(`
 		display: none!important;
 	}
 
+	//ads
+	iframe{
+		display: none!important;
+	}
+
 	//black body
 	html, body, div.item-container{
 		background-color: black!important;
